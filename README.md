@@ -54,8 +54,9 @@ python src/main.py
 ```
 
 🎮 Comandos do Jogo
-
+```bash
 ESPAÇO,Soltar Bola (Realizar aposta)
 ↑ ou W,"Aumentar Aposta (+ R$ 5,00)"
 ↓ ou S,"Diminuir Aposta (- R$ 5,00)"
 R,Refinanciar (Apenas quando o saldo acabar)
+```
