@@ -1,157 +1,61 @@
-# Plinko-estatistico
-Este projeto implementa um jogo digital inspirado em um "Cassino Fake" com foco no estudo do comportamento de variáveis aleatórias do tipo binomial.
-O usuário lança bolinhas que descem por uma pirâmide de pinos, escolhendo aleatoriamente (50/50) ir para a esquerda ou direita em cada linha, simulando um processo binomial clássico.
+# 🎰 Cassino Estatístico: O Tabuleiro de Galton
 
-Enquanto o jogo acontece, um histograma empírico é atualizado em tempo real e comparado com a curva teórica binomial, permitindo visualizar a convergência entre teoria e prática.
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Pygame](https://img.shields.io/badge/Pygame-2.x-yellow?style=for-the-badge&logo=pygame)
+![Status](https://img.shields.io/badge/Status-Finalizado-green?style=for-the-badge)
 
-Este projeto atende ao requisito de apresentar simultaneamente:
+> Um jogo digital que une entretenimento e ciência para demonstrar o comportamento de eventos aleatórios e a distribuição de probabilidade em tempo real.
 
-✔ Simulação aleatória em tempo real
-✔ Distribuição de probabilidade empírica vs. teórica
-✔ Jogabilidade + visualização estatística
+---
 
-Funcionalidades do Jogo:
+## 📋 Sobre o Projeto
 
-Lado Esquerdo – O Jogo
+Este trabalho foi desenvolvido para a disciplina de **Estatística** com o objetivo de simular um **Tabuleiro de Galton** (mecânica estilo "Plinko").
 
-Pirâmide de pinos simulada via grade.
+O software ilustra visualmente a **Lei dos Grandes Números** e o **Teorema do Limite Central**. O jogador aposta dinheiro fictício soltando bolas em uma pirâmide de pinos. Enquanto joga, um gráfico é gerado simultaneamente, demonstrando como o caos individual converge para uma ordem matemática (a Curva de Gauss/Normal).
 
-Bolinhas caindo linha por linha, escolhendo aleatoriamente esquerda/direita.
+### Destaques:
+* **Gamificação:** Sistema de saldo, apostas variáveis e risco/retorno (Cassino Fake).
+* **Simulação Real:** Física de colisão simples determinística (50/50).
+* **Análise Visual:** Histograma empírico vs. Curva Teórica em tempo real.
 
-Cestas na base com multiplicadores de aposta:
+---
 
-Centrais → baixo retorno (altamente prováveis)
+## 🛠️ Instalação e Execução
 
-Extremidades → alto retorno (raras)
+Siga os passos abaixo para rodar o jogo no seu computador.
 
-HUD exibindo:
+### 1. Clonar o Repositório
+```bash
+git clone [https://github.com/SEU-USUARIO/NOME-DO-REPO.git](https://github.com/SEU-USUARIO/NOME-DO-REPO.git)
+cd NOME-DO-REPO
+```
+2. Criar e Ativar Ambiente Virtual (Opcional, mas recomendado)
 
-Saldo atual
+Windows:
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
 
-Lucro/Prejuízo da última jogada
+Linux/Mac:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+5. Instalar Dependências
+```bash
+pip install -r requirements.txt
+```
 
-Valor da aposta fixa
+7. Rodar o Jogo
+```bash
+python src/main.py
+```
 
-Teclas:
+🎮 Comandos do Jogo
 
-ESPAÇO → Lançar uma bola
-
-R → Resetar o jogo
-
-Lado Direito – Estatística em Tempo Real
-
-Histograma atualizado conforme as bolinhas caem.
-
-Curva teórica fixa da distribuição binomial desenhada no fundo.
-
-Comparação direta:
-
-Resultados empíricos (simulação)
-
-Probabilidades teóricas (modelo binomial)
-
-Modelo Matemático
-
-Cada bola percorre uma série de decisões binárias independentes.
-Isso equivale a um ensaio binomial com:
-
-n = número de linhas da pirâmide
-
-p = 0.5 em cada decisão
-
-Isso cria a clássica curva em formato de sino (aproximação da normal para n grande).
-
-As cestas representam os valores 
-𝑘
-k possíveis do número de passos à direita.
-
-equisitos
-
-Python 3.10+
-
-pygame
-
-Bibliotecas padrão:
-
-random
-
-math
-
-sys
-
-etc.
-
-Instalação do pygame: pip install pygame
-
-Como Executar
-
-Clone o repositório: git clone https://github.com/SEU_USUARIO/seu-repo.git
-cd seu-repo
-
-Execute o jogo: python jogo.py
-
-Arquitetura do Código:
-
-O projeto foi implementado em um único arquivo, conforme os requisitos.
-
-Principais seções do código:
-
-Configurações gerais (cores, tamanhos, fonte, constantes)
-
-Classe Ball – lógica da bolinha caindo
-
-Sistema de pinos e cestas
-
-HUD e textos
-
-Histograma + Curva Teórica
-
-Loop principal do jogo
-
-Sistema de apostas
-
-Todo o código é comentado em português e organizado.
-
-Controles:
-Tecla	Função
-ESPAÇO	Solta uma nova bola
-R	Reseta o jogo
-ESC	Fecha o jogo
-
-Distribuição Empírica vs. Teórica
-
-Histograma → Frequências empíricas dos resultados.
-
-Curva → 𝑃(𝑋=𝑘)=(𝑛/𝑘)0.5^𝑛
-
-Permite observar:
-
-Convergência estatística
-
-Flutuações amostrais
-
-Análise de risco e retorno (via multiplicadores)
-
-Objetivo Acadêmico
-
-Este jogo demonstra:
-
-✔ Comportamento de eventos aleatórios
-✔ Formação de uma distribuição binomial
-✔ Diferença entre probabilidade teórica e experimental
-✔ Simulação estocástica em tempo real
-✔ Conceitos de risco/retorno em jogos de azar
-
-Pontuação do trabalho é maximizada por:
-
-Criatividade
-
-Jogabilidade
-
-Visualização estatística explícita
-
-Qualidade da implementação e apresentação
-
-📜 Licença
-
-Este projeto pode ser utilizado para fins acadêmicos e educacionais.
+ESPAÇO,Soltar Bola (Realizar aposta)
+↑ ou W,"Aumentar Aposta (+ R$ 5,00)"
+↓ ou S,"Diminuir Aposta (- R$ 5,00)"
+R,Refinanciar (Apenas quando o saldo acabar)
